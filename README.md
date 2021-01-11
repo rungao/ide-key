@@ -6,9 +6,9 @@ jetbrains series ide key get to clipboard.
 go get github.com/rungao/ide-key
 ide-key
 ```
-now your can copy clipboard's content for ide-software regriester.
+now your can use clipboard's content for ide software register.
 
 ### Tips
-please sure golang bin dirname path is your user's `PATH` variable, 
- - for windows you can input `echo %PATH%`
- - for mac your can input `$PATH`
+please sure golang bin dirname path is your computer current login user's `PATH` variable, 
+ - for windows you can print `echo %PATH%` confirm it
+ - for mac your can print `$PATH` confirm it
