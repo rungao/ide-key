@@ -2,6 +2,7 @@ package main
 
 import (
 	"archive/zip"
+	"fmt"
 	"github.com/atotto/clipboard"
 	"io/ioutil"
 	"net/http"
@@ -36,11 +37,11 @@ func main() {
 	}
 
 	var license string
-	for k, f := range r.File {
-		if k > 0 {
+	for _, file := range r.File {
+		if file.Name[0:4] != "2018"{
 			continue
 		}
-		f, err := f.Open()
+		f, err := file.Open()
 
 		if err != nil {
 			panic(err)
@@ -56,8 +57,10 @@ func main() {
 		license = string(fd)
 	}
 
+	fmt.Println(license)
+
 	// 拷贝到粘贴板
-	clipboard.WriteAll(string(license))
+	clipboard.WriteAll(license)
 
 	r.Close()
 	if err != nil {
